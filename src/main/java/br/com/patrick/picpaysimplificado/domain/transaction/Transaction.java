@@ -3,22 +3,19 @@ package br.com.patrick.picpaysimplificado.domain.transaction;
 
 import br.com.patrick.picpaysimplificado.domain.user.User;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 
 @Entity(name ="transactions")
-@Table(name = "Transactions")
+@Table(name = "transactions")
 @Getter
 @Setter
 @AllArgsConstructor
+@NoArgsConstructor
 @EqualsAndHashCode(of="id")
-
 public class Transaction {
 
     @Id
@@ -26,7 +23,6 @@ public class Transaction {
     private Long id;
 
     private BigDecimal amount;
-
 
     @ManyToOne
     @JoinColumn(name = "sender_id")
